@@ -15,14 +15,39 @@ function removeRow(btn) {
 }
 
 window.onload = () => {
-  addItem("Sofa Set", "Godrej", "₹20,000 - ₹25,000", 1);
-  addItem("Dining Table", "Nilkamal", "₹10,000 - ₹15,000", 1);
+addItem("9MM 8X4 SEMI WATERPROOF GURJANFACE", "-", "-", "");
+addItem("25MM 8X4 BLACKBORDSEMI WATERPROOF GURJANFACE", "-", "-", "");
+addItem("12MM 8X4 SEMIWATERPROOF GURJANFACE", "-", "-", "");
+addItem("06MM 8X4 SEMI WATERPROOF GURJANFACE", "-", "-", "");
+addItem("09MM 8X4 SEMIWATERPROOF GURJANFACE", "-", "-", "");
+addItem("30MM 8X4 DOORBLACKBORDSEMI WATERPROOF GURJANFACE", "-", "-", "");
+addItem("MDF/HDMR SHEET 9MM8X4", "-", "-", "");
+addItem("MDF/HDMR SHEET 12MM8X4", "-", "-", "");
+addItem("BIDING PATTI AGRAD 1.5 X0.50", "-", "-", "");
+addItem("BIDING PATTI A GRAD 1.0X 0.50", "-", "-", "");
+addItem("BIDING PATTI A GRAD 2.0X 0.50", "-", "-", "");
+addItem("BIDING PATTI A GRAD 2.0X 0.25", "-", "-", "");
+addItem("WOODEN LEMINATE", "COMPANYBEEL,MERINO, ROTOLEM", "1400 TO 1600", "");
+addItem("INNER LEMINATION SHEET FEBRIC", "-", "-", "");
+addItem("KITCHEN LAMINATE SHEET", "ROYLE TOUCH", "3000", "");
+
+
+addItem("KITCHEN TENDAM", "AFECO, INSTARE, GODRAGE", "", "");
+addItem("CHIMENY", "HINDWARE, ELICA, FEBAR", "22000 TO 25000", "1");
+addItem("KABAT DOWARELOACKGODRAGE", "", "", "");
+addItem("INJIS AND SCROOWSS", "", "", "");
+addItem("KABATDOWERCHANELCOMPANY", "OZON,GODRAGE", "", "");
+
+addItem("COULTEN KAPAD", "", "650 TO 700 per mt", "");
+
+
 };
 
 async function generatePDF() {
   // Fill customer and quotation data
   document.getElementById('pdfCustomerName').innerText = document.getElementById('customerName').value;
   document.getElementById('pdfMobileNumber').innerText = document.getElementById('mobileNumber').value;
+  document.getElementById('pdfSiteName').innerText = document.getElementById('sitename').value;
   document.getElementById('pdfNote').innerText = document.getElementById('note').value;
   document.getElementById('pdfEstimate').innerText = document.getElementById('estimate').value;
   document.getElementById('pdfDate').innerText = new Date().toLocaleDateString('en-IN');
@@ -68,11 +93,4 @@ async function generatePDF() {
 
   container.style.display = 'none';
 
-  // Ask to share via WhatsApp
-  const mobileNumber = document.getElementById('mobileNumber').value.trim();
-  if (mobileNumber && confirm("Do you want to share this quotation on WhatsApp?")) {
-    const message = encodeURIComponent(`Hello ${document.getElementById('customerName').value}, your quotation is ready. Please check your PDF.`);
-    const whatsappLink = `https://wa.me/91${mobileNumber}?text=${message}`;
-    window.open(whatsappLink, '_blank');
-  }
 }
