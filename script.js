@@ -116,7 +116,7 @@ function renderPreview() {
       <h2>Akshar Furniture</h2>
       <p>Shop No. 12, Akshar Complex, Ahmedabad<br>Phone: +91-9876543210<br>Email: info@aksharfurniture.com</p>
     </div>
-    <div style="text-align: right;"><strong>Date:</strong> ${new Date().toLocaleDateString()}</div>
+    <div style="text-align: right;"><strong>Date:</strong> ${new Date().toLocaleDateString('en-GB')}</div>
     <p><strong>Customer Name:</strong> ${name}</p>
     <p><strong>Mobile Number:</strong> ${mobile}</p>
     ${sectionHtml}
@@ -141,7 +141,7 @@ const name = document.getElementById('customerName').value.trim();
 const mobile = document.getElementById('mobileNumber').value.trim();
 const estimate = document.getElementById('estimate').value.trim();
 const note = document.getElementById('note').value.trim();
-const date = new Date().toLocaleDateString();
+const date = new Date().toLocaleDateString('en-GB');
 
 let y = 20;
 
