@@ -259,6 +259,28 @@ y += 22;
   // Save PDF
   const fileName = `Akshar_furniture_quotation_${name.replace(/\s+/g, '_')}.pdf`;
   pdf.save(fileName);
+  
+  alert("✅ PDF generated successfully!");
+
+  // ✅ Reset form fields
+  document.getElementById("customerName").value = "";
+  document.getElementById("mobileNumber").value = "";
+  document.getElementById("estimate").value = "";
+  document.getElementById("note").value = "";
+
+  // ✅ Clear all item tables
+  ["plywoodTable", "hardwareTable", "kitchenTable", "accessoryTable"].forEach(id => {
+    const tbody = document.getElementById(id).querySelector("tbody");
+    tbody.innerHTML = "";
+  });
+
+  // ✅ Go back to Step 1
+  document.querySelectorAll(".step").forEach(step => step.classList.remove("active"));
+  document.getElementById("step1").classList.add("active");
+  updateStepDots(1);
+
+  // ✅ Re-fill default sample items
+  addPrefilledItems();
 }
 
 function formatINR(amount) {
